@@ -3,80 +3,82 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout 
-  title="Systems Thinking Principles · Founder-Built Execution"
-  description="The principles behind building reliable, maintainable internal systems: ownership, stability, documentation, and responsible evolution."
+    title="Systems Thinking Principles · Founder-Built Execution"
+    description="The principles behind building reliable, maintainable internal systems: ownership, stability, documentation, and responsible evolution."
 >
-  <section style="padding: 80px 24px; max-width: 800px; margin: 0 auto;">
-    <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 24px;">Principles</h1>
-    <p style="font-size: 1.25rem; color: #b0b0c0; line-height: 1.6; margin-bottom: 64px;">
-      The thinking behind the systems.
-    </p>
+    <section class="section">
+        <div class="section-narrow">
+            <h1 class="mb-24">Principles</h1>
+            <p class="text-large mb-64">
+                The thinking behind the systems.
+            </p>
 
-    <div style="margin-bottom: 64px;">
-      <h2 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 24px; color: #f0f0f5; border-bottom: 1px solid #2a2a35; padding-bottom: 16px;">
-        1. Ownership vs. Delegation in Systems
-      </h2>
-      <p style="color: #b0b0c0; line-height: 1.7; margin-bottom: 16px;">
-        Delegation works for tasks with clear boundaries. Systems—especially internal ones—have fluid boundaries. What starts as a reporting tool becomes a decision engine, then integrates with operations, then needs real-time updates.
-      </p>
-      <p style="color: #b0b0c0; line-height: 1.7;">
-        Ownership means one person understands the whole, sees connections before they become problems, and evolves the system intentionally rather than reactively.
-      </p>
-    </div>
+            <div class="mb-64">
+                <h2 class="mb-24" style="border-bottom: 1px solid var(--border); padding-bottom: 16px;">
+                    1. Ownership vs. Delegation in Systems
+                </h2>
+                <p class="mb-16">
+                    Delegation works for tasks with clear boundaries. Systems—especially internal ones—have fluid boundaries. What starts as a reporting tool becomes a decision engine, then integrates with operations, then needs real-time updates.
+                </p>
+                <p>
+                    Ownership means one person understands the whole, sees connections before they become problems, and evolves the system intentionally rather than reactively.
+                </p>
+            </div>
 
-    <div style="margin-bottom: 64px;">
-      <h2 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 24px; color: #f0f0f5; border-bottom: 1px solid #2a2a35; padding-bottom: 16px;">
-        2. Why Stability Precedes Scale
-      </h2>
-      <p style="color: #b0b0c0; line-height: 1.7; margin-bottom: 16px;">
-        A system that works reliably for 10 users but fails unpredictably for 100 is worse than one that works for 5 users consistently. Scale reveals architectural flaws, but instability destroys trust.
-      </p>
-      <p style="color: #b0b0c0; line-height: 1.7;">
-        We build for the current reality plus one order of magnitude. When that's stable, we scale again. Not before.
-      </p>
-    </div>
+            <div class="mb-64">
+                <h2 class="mb-24" style="border-bottom: 1px solid var(--border); padding-bottom: 16px;">
+                    2. Why Stability Precedes Scale
+                </h2>
+                <p class="mb-16">
+                    A system that works reliably for 10 users but fails unpredictably for 100 is worse than one that works for 5 users consistently. Scale reveals architectural flaws, but instability destroys trust.
+                </p>
+                <p>
+                    We build for the current reality plus one order of magnitude. When that's stable, we scale again. Not before.
+                </p>
+            </div>
 
-    <div style="margin-bottom: 64px;">
-      <h2 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 24px; color: #f0f0f5; border-bottom: 1px solid #2a2a35; padding-bottom: 16px;">
-        3. When Spreadsheets Fail (and What Comes Next)
-      </h2>
-      <p style="color: #b0b0c0; line-height: 1.7; margin-bottom: 16px;">
-        Spreadsheets are perfect until they're not. The failure signals: multiple people editing, version confusion, manual data entry errors, formulas breaking silently, decision delays waiting for "the spreadsheet person."
-      </p>
-      <p style="color: #b0b0c0; line-height: 1.7;">
-        The next step isn't a bigger spreadsheet. It's a system with: single source of truth, controlled access, automated data flows, validation, and audit trails.
-      </p>
-    </div>
+            <div class="mb-64">
+                <h2 class="mb-24" style="border-bottom: 1px solid var(--border); padding-bottom: 16px;">
+                    3. When Spreadsheets Fail (and What Comes Next)
+                </h2>
+                <p class="mb-16">
+                    Spreadsheets are perfect until they're not. The failure signals: multiple people editing, version confusion, manual data entry errors, formulas breaking silently, decision delays waiting for "the spreadsheet person."
+                </p>
+                <p>
+                    The next step isn't a bigger spreadsheet. It's a system with: single source of truth, controlled access, automated data flows, validation, and audit trails.
+                </p>
+            </div>
 
-    <div style="margin-bottom: 64px;">
-      <h2 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 24px; color: #f0f0f5; border-bottom: 1px solid #2a2a35; padding-bottom: 16px;">
-        4. Building for Daily Use, Not Demos
-      </h2>
-      <p style="color: #b0b0c0; line-height: 1.7;">
-        Demo-ware is optimized for first impressions. Production systems are optimized for the 1000th use. This means: loading states, error recovery, data validation, performance under real data volumes, clear error messages, and intuitive workflows for tired users at 4 PM.
-      </p>
-    </div>
+            <div class="mb-64">
+                <h2 class="mb-24" style="border-bottom: 1px solid var(--border); padding-bottom: 16px;">
+                    4. Building for Daily Use, Not Demos
+                </h2>
+                <p>
+                    Demo-ware is optimized for first impressions. Production systems are optimized for the 1000th use. This means: loading states, error recovery, data validation, performance under real data volumes, clear error messages, and intuitive workflows for tired users at 4 PM.
+                </p>
+            </div>
 
-    <div style="margin-bottom: 64px;">
-      <h2 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 24px; color: #f0f0f5; border-bottom: 1px solid #2a2a35; padding-bottom: 16px;">
-        5. Responsible Evolution (Not Scope Creep)
-      </h2>
-      <p style="color: #b0b0c0; line-height: 1.7; margin-bottom: 16px;">
-        Systems evolve or die. But evolution without architecture is cancer—features added wherever they fit, complexity growing exponentially.
-      </p>
-      <p style="color: #b0b0c0; line-height: 1.7;">
-        Responsible evolution means: understanding the cost of each feature, preserving conceptual integrity, and saying "not now" more often than "yes."
-      </p>
-    </div>
+            <div class="mb-64">
+                <h2 class="mb-24" style="border-bottom: 1px solid var(--border); padding-bottom: 16px;">
+                    5. Responsible Evolution (Not Scope Creep)
+                </h2>
+                <p class="mb-16">
+                    Systems evolve or die. But evolution without architecture is cancer—features added wherever they fit, complexity growing exponentially.
+                </p>
+                <p>
+                    Responsible evolution means: understanding the cost of each feature, preserving conceptual integrity, and saying "not now" more often than "yes."
+                </p>
+            </div>
 
-    <div style="background: #1a1a23; border: 1px solid #2a2a35; border-radius: 8px; padding: 32px; margin-top: 64px;">
-      <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 16px; color: #f0f0f5;">These principles guide every system we build.</h2>
-      <p style="color: #b0b0c0; line-height: 1.6;">
-        They're not abstract philosophy—they're practical constraints that produce better outcomes. If your challenge aligns with this thinking, we should talk.
-      </p>
-      <div style="text-align: center; margin-top: 32px;">
-        <a href="/contact" style="background: #3a8bba; color: white; padding: 16px 32px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 1.1rem; display: inline-block;">Start the Conversation</a>
-      </div>
-    </div>
-  </section>
+            <div class="card mt-64">
+                <h2 class="mb-16">These principles guide every system we build.</h2>
+                <p class="mb-32">
+                    They're not abstract philosophy—they're practical constraints that produce better outcomes. If your challenge aligns with this thinking, we should talk.
+                </p>
+                <div class="text-center">
+                    <a href="/contact" class="btn btn-primary">Start the Conversation</a>
+                </div>
+            </div>
+        </div>
+    </section>
 </Layout>
