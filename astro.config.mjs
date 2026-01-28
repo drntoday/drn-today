@@ -5,5 +5,8 @@ export default defineConfig({
   site: 'https://drntoday.github.io',
   base: '/drn-today/',
   integrations: [],
-  output: 'static'
+  output: 'static',
+  build: {
+    format: 'directory'
+  }
 });
