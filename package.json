@@ -1,0 +1,23 @@
+{
+  "name": "drn-today",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Founder-built web systems for operational clarity",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "astro": "^4.5.5"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
