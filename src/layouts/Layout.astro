@@ -1,5 +1,4 @@
 ---
-// Frontmatter: JavaScript/TypeScript goes here
 const siteTitle = "DRN.today";
 const pageTitle = Astro.props.title ? `${Astro.props.title} · ${siteTitle}` : siteTitle;
 const description = Astro.props.description || "Founder-built web systems that replace spreadsheets, reduce operational friction, and bring clarity";
@@ -7,9 +6,9 @@ const description = Astro.props.description || "Founder-built web systems that r
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     
@@ -24,47 +23,359 @@ const description = Astro.props.description || "Founder-built web systems that r
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     
-    <!-- Canonical -->
-    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
-    
-    <!-- Styles will be injected here -->
-  </head>
-  <body style="margin: 0; padding: 0; background: #0a0a0f; color: #f0f0f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #111118;
+            --bg-surface: #1a1a23;
+            --text-primary: #f0f0f5;
+            --text-secondary: #b0b0c0;
+            --text-tertiary: #808090;
+            --accent: #3a8bba;
+            --accent-hover: #4a9bca;
+            --border: #2a2a35;
+            --border-light: #333340;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        /* Navigation */
+        .nav {
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+        
+        .nav-link {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+        
+        .nav-cta {
+            background: var(--accent);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+        }
+        
+        .nav-cta:hover {
+            background: var(--accent-hover);
+        }
+        
+        /* Main Content */
+        main {
+            min-height: calc(100vh - 200px);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border);
+            padding: 48px 24px;
+            margin-top: 80px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-text {
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .footer-links {
+            margin-top: 24px;
+        }
+        
+        .footer-link {
+            color: var(--text-secondary);
+            margin-right: 16px;
+        }
+        
+        .footer-link:hover {
+            color: var(--text-primary);
+        }
+        
+        /* Sections */
+        .section {
+            padding: 80px 24px;
+        }
+        
+        .section-narrow {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .section-wide {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Typography */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        .text-large {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-hover);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(58, 139, 186, 0.1);
+        }
+        
+        /* Cards */
+        .card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 32px;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        
+        /* Utility */
+        .mb-24 { margin-bottom: 24px; }
+        .mb-32 { margin-bottom: 32px; }
+        .mb-48 { margin-bottom: 48px; }
+        .mb-64 { margin-bottom: 64px; }
+        
+        .mt-24 { margin-top: 24px; }
+        .mt-32 { margin-top: 32px; }
+        .mt-48 { margin-top: 48px; }
+        .mt-64 { margin-top: 64px; }
+        
+        .flex-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+        
+        .gap-16 { gap: 16px; }
+        .gap-24 { gap: 24px; }
+        .gap-32 { gap: 32px; }
+        
+        .mono {
+            font-family: 'IBM Plex Mono', 'SF Mono', Monaco, Consolas, monospace;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: rgba(58, 139, 186, 0.1);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        /* Hero Gradient */
+        .hero-gradient {
+            background: linear-gradient(90deg, #f0f0f5 0%, #b0b0c0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Forms */
+        .form-group {
+            margin-bottom: 32px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 16px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+            
+            .section {
+                padding: 48px 16px;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
     <!-- Navigation -->
-    <header style="background: rgba(10, 10, 15, 0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #2a2a35;">
-      <nav style="max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between;">
-        <div style="display: flex; align-items: center; gap: 32px;">
-          <a href="/" style="font-weight: 700; font-size: 1.2rem; color: #f0f0f5; text-decoration: none;">DRN.today</a>
-          <div style="display: flex; gap: 24px;">
-            <a href="/work" style="color: #b0b0c0; text-decoration: none; font-size: 0.95rem; font-weight: 500;">Work</a>
-            <a href="/principles" style="color: #b0b0c0; text-decoration: none; font-size: 0.95rem; font-weight: 500;">Principles</a>
-            <a href="/about" style="color: #b0b0c0; text-decoration: none; font-size: 0.95rem; font-weight: 500;">About</a>
-          </div>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="flex-center gap-32">
+                <a href="/" class="nav-logo">DRN.today</a>
+                <div class="nav-links">
+                    <a href="/work" class="nav-link">Work</a>
+                    <a href="/principles" class="nav-link">Principles</a>
+                    <a href="/about" class="nav-link">About</a>
+                </div>
+            </div>
+            <a href="/contact" class="nav-cta">Describe Your Challenge</a>
         </div>
-        <a href="/contact" style="background: #3a8bba; color: white; padding: 12px 24px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.95rem;">Describe Your Challenge</a>
-      </nav>
-    </header>
+    </nav>
 
+    <!-- Main Content -->
     <main>
-      <slot /> <!-- Page content injected here -->
+        <slot />
     </main>
 
     <!-- Footer -->
-    <footer style="background: #0a0a0f; border-top: 1px solid #2a2a35; padding: 48px 24px; margin-top: 80px;">
-      <div style="max-width: 1200px; margin: 0 auto;">
-        <div style="color: #808090; font-size: 0.9rem; line-height: 1.6;">
-          <p>© 2024 DRN.today</p>
-          <p>Founder-built systems · Direct execution · No hand-offs</p>
-          <p style="margin-top: 24px;">
-            <a href="/work" style="color: #b0b0c0; text-decoration: none; margin-right: 16px;">Work</a>
-            <a href="/principles" style="color: #b0b0c0; text-decoration: none; margin-right: 16px;">Principles</a>
-            <a href="/about" style="color: #b0b0c0; text-decoration: none; margin-right: 16px;">About</a>
-            <a href="/contact" style="color: #b0b0c0; text-decoration: none;">Contact</a>
-          </p>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-text">
+                <p>© 2024 DRN.today</p>
+                <p>Founder-built systems · Direct execution · No hand-offs</p>
+                <div class="footer-links">
+                    <a href="/work" class="footer-link">Work</a>
+                    <a href="/principles" class="footer-link">Principles</a>
+                    <a href="/about" class="footer-link">About</a>
+                    <a href="/contact" class="footer-link">Contact</a>
+                </div>
+            </div>
         </div>
-      </div>
     </footer>
-
-    <!-- Scripts will be injected here -->
-  </body>
+</body>
 </html>
