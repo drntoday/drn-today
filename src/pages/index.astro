@@ -1,96 +1,105 @@
 ---
+// Homepage
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout 
-    title="Founder-Built Web Systems for Operational Clarity"
-    description="DRN.today builds internal web systems that replace spreadsheets, reduce operational friction, and bring clarity — designed and executed by a single accountable founder."
->
-    <!-- Hero Section -->
-    <section class="section" style="background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);">
-        <div class="section-narrow text-center">
-            <h1 class="hero-gradient mb-24">From Operational Chaos to Clarity</h1>
-            <p class="text-large mb-48">
-                Founder-built internal systems that replace spreadsheets, reduce friction, and bring control to your business operations.
-            </p>
-            <div class="flex-center gap-16 flex-wrap">
-                <a href="/contact" class="btn btn-primary">Describe Your System Challenge</a>
-                <a href="#how-i-work" class="btn btn-secondary">Schedule a Clarity Call</a>
-            </div>
+<Layout title="Founder-Built Web Systems for Operational Clarity">
+  <section class="py-12">
+    <div class="container">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <h1 style="font-size: 3.052rem; font-weight: 700; line-height: 1.2; margin-bottom: 1.5rem;">
+          From Operational Chaos to Clarity
+        </h1>
+        <p style="font-size: 1.25rem; color: var(--color-text-secondary); margin-bottom: 3rem;">
+          Founder-built internal systems that replace spreadsheets, reduce friction, and bring control to your business operations.
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="/contact" class="btn btn-primary">Describe Your System Challenge</a>
+          <a href="/contact?type=call" class="btn btn-secondary">Schedule a System Clarity Call</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Problem Recognition -->
-    <section class="section">
-        <div class="section-wide">
-            <h2 class="text-center mb-48">When Spreadsheets Stop Working</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Manual Data Reconciliation</h3>
-                    <p>Hours spent daily merging data from multiple spreadsheets and tools that don't communicate.</p>
-                </div>
-                <div class="card">
-                    <h3>Lack of Real-time Visibility</h3>
-                    <p>Decisions made with outdated information because there's no single source of truth.</p>
-                </div>
-                <div class="card">
-                    <h3>Founder Dependency</h3>
-                    <p>You're the bottleneck because only you know how all the pieces fit together.</p>
-                </div>
-            </div>
+  <section class="py-12" style="background: var(--color-bg-surface);">
+    <div class="container">
+      <h2 style="font-size: 2.441rem; font-weight: 700; margin-bottom: 3rem; text-align: center;">
+        When Spreadsheets Stop Working
+      </h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        <div style="padding: 2rem; border: 1px solid var(--color-border); border-radius: 6px;">
+          <h3 style="font-size: 1.563rem; font-weight: 600; margin-bottom: 1rem;">Manual Data Reconciliation</h3>
+          <p style="color: var(--color-text-secondary);">Hours spent daily merging data from multiple spreadsheets and tools.</p>
         </div>
-    </section>
+        <div style="padding: 2rem; border: 1px solid var(--color-border); border-radius: 6px;">
+          <h3 style="font-size: 1.563rem; font-weight: 600; margin-bottom: 1rem;">Systems That Don't Talk</h3>
+          <p style="color: var(--color-text-secondary);">Separate tools for sales, support, operations that don't integrate.</p>
+        </div>
+        <div style="padding: 2rem; border: 1px solid var(--color-border); border-radius: 6px;">
+          <h3 style="font-size: 1.563rem; font-weight: 600; margin-bottom: 1rem;">Founder Dependency</h3>
+          <p style="color: var(--color-text-secondary);">You're the bottleneck because only you know how all the pieces fit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- How I Work -->
-    <section id="how-i-work" class="section" style="background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);">
-        <div class="section-wide">
-            <h2 class="text-center mb-48">How I Work: Execution Without Hand-Offs</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="mono" style="color: var(--accent); margin-bottom: 16px;">01</div>
-                    <h3>Single-Point Ownership</h3>
-                    <p>From first line of code to deployment and long-term maintenance. No hand-offs, no excuses.</p>
-                </div>
-                <div class="card">
-                    <div class="mono" style="color: var(--accent); margin-bottom: 16px;">02</div>
-                    <h3>Systems for Daily Use</h3>
-                    <p>Built for reliability in daily operations, not as demos or prototypes that fail under real load.</p>
-                </div>
-                <div class="card">
-                    <div class="mono" style="color: var(--accent); margin-bottom: 16px;">03</div>
-                    <h3>Stability Before Scale</h3>
-                    <p>A working system for 100 users is better than a broken one for 1000. Reliability first.</p>
-                </div>
-                <div class="card">
-                    <div class="mono" style="color: var(--accent); margin-bottom: 16px;">04</div>
-                    <h3>No Scope Creep</h3>
-                    <p>Controlled, intentional evolution. We build what's needed, not everything that's possible.</p>
-                </div>
-                <div class="card">
-                    <div class="mono" style="color: var(--accent); margin-bottom: 16px;">05</div>
-                    <h3>Decisions Documented</h3>
-                    <p>Trade-offs explained, architecture reasoned. You understand why we built it this way.</p>
-                </div>
-                <div class="card">
-                    <div class="mono" style="color: var(--accent); margin-bottom: 16px;">06</div>
-                    <h3>Long-Term Responsibility</h3>
-                    <p>What I build, I maintain. Your system evolves with your business, doesn't get abandoned.</p>
-                </div>
-            </div>
+  <section class="py-12">
+    <div class="container">
+      <h2 style="font-size: 2.441rem; font-weight: 700; margin-bottom: 3rem; text-align: center;">
+        How I Work: Execution Without Hand-Offs
+      </h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+        <div>
+          <h3 style="font-size: 1.563rem; font-weight: 600; margin-bottom: 1rem;">Single-Point Ownership</h3>
+          <p style="color: var(--color-text-secondary);">From first line of code to deployment and maintenance.</p>
         </div>
-    </section>
+        <div>
+          <h3 style="font-size: 1.563rem; font-weight: 600; margin-bottom: 1rem;">Built for Daily Use</h3>
+          <p style="color: var(--color-text-secondary);">Not demos, not prototypes—tools that work every day.</p>
+        </div>
+        <div>
+          <h3 style="font-size: 1.563rem; font-weight: 600; margin-bottom: 1rem;">Stability Before Scale</h3>
+          <p style="color: var(--color-text-secondary);">A working system for 100 is better than a broken one for 1000.</p>
+        </div>
+        <div>
+          <h3 style="font-size: 1.563rem; font-weight: 600; margin-bottom: 1rem;">No Scope Creep</h3>
+          <p style="color: var(--color-text-secondary);">Only controlled, intentional evolution of systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Final CTA -->
-    <section class="section">
-        <div class="section-narrow text-center">
-            <h2 class="mb-24">Ready to Systematize Your Operations?</h2>
-            <p class="text-large mb-48">
-                Stop patching broken processes. Start building systems that work.
-            </p>
-            <div class="flex-center gap-16 flex-wrap">
-                <a href="/contact" class="btn btn-primary">Describe Your System Challenge</a>
-                <a href="#how-i-work" class="btn btn-secondary">Schedule a 20-Minute Call</a>
-            </div>
+  <section class="py-12" style="background: var(--color-bg-surface);">
+    <div class="container">
+      <h2 style="font-size: 2.441rem; font-weight: 700; margin-bottom: 3rem; text-align: center;">
+        Systems Founders Rely On Daily
+      </h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        <div>
+          <h3 style="font-size: 1.563rem; font-weight: 600; margin-bottom: 1rem;">Internal Dashboards</h3>
+          <p style="color: var(--color-text-secondary);">Real-time visibility into operations, metrics, and KPIs.</p>
         </div>
-    </section>
+        <div>
+          <h3 style="font-size: 1.563rem; font-weight: 600; margin-bottom: 1rem;">Backend Platforms</h3>
+          <p style="color: var(--color-text-secondary);">Automated workflows, data processing, API integrations.</p>
+        </div>
+        <div>
+          <h3 style="font-size: 1.563rem; font-weight: 600; margin-bottom: 1rem;">Operational Tools</h3>
+          <p style="color: var(--color-text-secondary);">Custom systems replacing spreadsheets and manual processes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container text-center">
+      <h2 style="font-size: 2.441rem; font-weight: 700; margin-bottom: 1.5rem;">
+        Ready to Systematize Your Operations?
+      </h2>
+      <p style="font-size: 1.25rem; color: var(--color-text-secondary); margin-bottom: 3rem;">
+        Start with a clear description of your challenge.
+      </p>
+      <a href="/contact" class="btn btn-primary">Describe Your System Challenge</a>
+    </div>
+  </section>
 </Layout>
