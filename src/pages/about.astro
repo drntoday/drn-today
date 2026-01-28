@@ -1,51 +1,83 @@
 ---
+// About Page
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout 
-    title="The Builder · Single-Point Accountability for Systems"
-    description="Why one accountable builder produces better systems than agencies or rotating freelancers. Founder-built execution with long-term responsibility."
->
-    <section class="section">
-        <div class="section-narrow">
-            <h1 class="mb-24">The Builder</h1>
-            <p class="text-large mb-48">
-                Single-point accountability for systems that matter.
+<Layout title="The Builder · Single-Point Accountability for Systems">
+  <section class="py-12">
+    <div class="container">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <h1 style="font-size: 2.441rem; font-weight: 700; margin-bottom: 1rem;">
+          The Builder
+        </h1>
+        <p style="font-size: 1.25rem; color: var(--color-text-secondary); margin-bottom: 3rem;">
+          Single-point accountability for systems that matter.
+        </p>
+        
+        <div style="display: flex; flex-direction: column; gap: 3rem;">
+          <div>
+            <h2 style="font-size: 1.953rem; font-weight: 600; margin-bottom: 1.5rem;">
+              Why One Builder Beats an Agency
+            </h2>
+            <div style="color: var(--color-text-secondary); line-height: 1.7;">
+              <p style="margin-bottom: 1rem;">
+                Agencies delegate. Freelancers deliver features. Builders own systems end-to-end.
+              </p>
+              <p style="margin-bottom: 1rem;">
+                When you work with an agency, your project gets handed off: sales to account manager, account manager to project manager, project manager to developer, developer to QA. At each hand-off, context is lost, ownership is diluted, and accountability becomes collective—which means no one is truly accountable.
+              </p>
+              <p>
+                With a single builder, there's one point of contact, one person who understands the system completely, and one person responsible for its success or failure. This eliminates hand-off friction, ensures consistent vision, and creates clear accountability.
+              </p>
+            </div>
+          </div>
+          
+          <div>
+            <h2 style="font-size: 1.953rem; font-weight: 600; margin-bottom: 1.5rem;">
+              The Accountability Difference
+            </h2>
+            <div style="color: var(--color-text-secondary); line-height: 1.7;">
+              <p style="margin-bottom: 1rem;">
+                Accountability means more than just delivering code. It means:
+              </p>
+              <ul style="padding-left: 1.5rem; margin-bottom: 1rem;">
+                <li style="margin-bottom: 0.5rem;">Understanding the business problem, not just the technical requirement</li>
+                <li style="margin-bottom: 0.5rem;">Designing for the long term, not just the immediate deliverable</li>
+                <li style="margin-bottom: 0.5rem;">Being available when things break, not just when building new features</li>
+                <li style="margin-bottom: 0.5rem;">Documenting decisions and trade-offs so the system can be understood</li>
+                <li>Maintaining what's built, not abandoning it for the next project</li>
+              </ul>
+              <p>
+                This level of accountability transforms the relationship from vendor-client to partnership. When I build your system, I'm invested in its success because my reputation is tied to its performance.
+              </p>
+            </div>
+          </div>
+          
+          <div>
+            <h2 style="font-size: 1.953rem; font-weight: 600; margin-bottom: 1.5rem;">
+              From First Line to Long-Term Maintenance
+            </h2>
+            <div style="color: var(--color-text-secondary); line-height: 1.7;">
+              <p style="margin-bottom: 1rem;">
+                The value of a system isn't just in its initial build—it's in its evolution and maintenance over time. Systems that work today need to adapt tomorrow.
+              </p>
+              <p>
+                Because I'm the only person who touches the code, I understand it completely. This means faster iterations, safer changes, and more efficient maintenance. There's no need to bring a new team up to speed, no lost tribal knowledge, and no "that's how the previous developer did it" mysteries.
+              </p>
+            </div>
+          </div>
+          
+          <div style="padding: 2rem; background: var(--color-bg-surface); border: 1px solid var(--color-border); border-radius: 6px;">
+            <h3 style="font-size: 1.563rem; font-weight: 600; margin-bottom: 1rem;">
+              What "Founder-Built" Actually Means
+            </h3>
+            <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+              It means systems are built with the same care, attention, and long-term thinking that you apply to your business. No shortcuts that create technical debt. No features that don't serve the core need. No delivery without understanding the why.
             </p>
-
-            <div class="card mb-48">
-                <h2 class="mb-24">Why One Builder Beats an Agency</h2>
-                <p class="mb-24">
-                    Agencies optimize for billable hours and smooth hand-offs. They delegate, they rotate teams, they create documentation for the next person. This works for marketing sites, but fails for internal systems that need to work daily.
-                </p>
-                <p>
-                    One accountable builder means: <strong>no knowledge loss</strong>, <strong>no responsibility diffusion</strong>, <strong>no excuses</strong>. When something breaks, there's exactly one person who understands it completely and fixes it.
-                </p>
-            </div>
-
-            <div class="card mb-48">
-                <h2 class="mb-24">The Accountability Difference</h2>
-                <ul style="color: var(--text-secondary); padding-left: 24px;">
-                    <li class="mb-16"><strong>No hand-offs:</strong> The person who architects also builds, also deploys, also maintains.</li>
-                    <li class="mb-16"><strong>Long-term thinking:</strong> Building for maintainability because I'll be the one maintaining it.</li>
-                    <li class="mb-16"><strong>Direct communication:</strong> No account managers, no project managers, no layers.</li>
-                    <li><strong>Skin in the game:</strong> My reputation depends on your system working, not just being delivered.</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h2 class="mb-24">What "Founder-Built" Actually Means</h2>
-                <p class="mb-24">
-                    It doesn't mean I only work with founders (though I often do). It means I build systems with the same ownership mindset a founder has for their business.
-                </p>
-                <p>
-                    I treat your system like it's my own: caring about the details, anticipating problems, and committing to its long-term success. This is the opposite of contractor mentality.
-                </p>
-            </div>
-
-            <div class="text-center mt-64">
-                <a href="/contact" class="btn btn-primary">Describe Your Challenge</a>
-            </div>
+            <a href="/contact" class="btn btn-primary">Describe Your System Challenge</a>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 </Layout>
