@@ -3,118 +3,93 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout 
-  title="Start the Conversation · Describe Your System Challenge"
-  description="Ready to systematize your operations? Describe your challenge for a focused discussion about founder-built internal systems."
+    title="Start the Conversation · Describe Your System Challenge"
+    description="Ready to systematize your operations? Describe your challenge for a focused discussion about founder-built internal systems."
 >
-  <section style="padding: 80px 24px; max-width: 800px; margin: 0 auto;">
-    <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 24px; text-align: center;">Start the Conversation</h1>
-    <p style="font-size: 1.25rem; color: #b0b0c0; line-height: 1.6; margin-bottom: 48px; text-align: center;">
-      Describe your system challenge below. The more specific you are, the better I can understand if and how I can help.
-    </p>
+    <section class="section">
+        <div class="section-narrow">
+            <h1 class="text-center mb-24">Start the Conversation</h1>
+            <p class="text-large text-center mb-48">
+                Describe your system challenge below. The more specific you are, the better I can understand if and how I can help.
+            </p>
 
-    <!-- Contact Form -->
-    <form 
-      name="contact" 
-      method="POST" 
-      data-netlify="true" 
-      netlify-honeypot="bot-field"
-      style="background: #1a1a23; border: 1px solid #2a2a35; border-radius: 8px; padding: 48px;"
-    >
-      <input type="hidden" name="form-name" value="contact" />
-      <p style="display: none;">
-        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-      </p>
+            <!-- Contact Form -->
+            <div class="card">
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <p style="display: none;">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
 
-      <div style="margin-bottom: 32px;">
-        <label style="display: block; margin-bottom: 8px; color: #f0f0f5; font-weight: 500;">Name *</label>
-        <input 
-          type="text" 
-          name="name" 
-          required 
-          style="width: 100%; padding: 12px 16px; background: #111118; border: 1px solid #2a2a35; border-radius: 4px; color: #f0f0f5; font-size: 1rem; box-sizing: border-box;"
-          placeholder="Your name"
-        />
-      </div>
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Your name" />
+                    </div>
 
-      <div style="margin-bottom: 32px;">
-        <label style="display: block; margin-bottom: 8px; color: #f0f0f5; font-weight: 500;">Email *</label>
-        <input 
-          type="email" 
-          name="email" 
-          required 
-          style="width: 100%; padding: 12px 16px; background: #111118; border: 1px solid #2a2a35; border-radius: 4px; color: #f0f0f5; font-size: 1rem; box-sizing: border-box;"
-          placeholder="you@example.com"
-        />
-      </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="you@example.com" />
+                    </div>
 
-      <div style="margin-bottom: 32px;">
-        <label style="display: block; margin-bottom: 8px; color: #f0f0f5; font-weight: 500;">Role *</label>
-        <select 
-          name="role" 
-          required 
-          style="width: 100%; padding: 12px 16px; background: #111118; border: 1px solid #2a2a35; border-radius: 4px; color: #f0f0f5; font-size: 1rem; box-sizing: border-box;"
-        >
-          <option value="" disabled selected>Select your role</option>
-          <option value="founder">Founder</option>
-          <option value="operator">Operator</option>
-          <option value="manager">Manager</option>
-          <option value="technical-lead">Technical Lead</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
+                    <div class="form-group">
+                        <label for="role">Role *</label>
+                        <select id="role" name="role" required>
+                            <option value="" disabled selected>Select your role</option>
+                            <option value="founder">Founder</option>
+                            <option value="operator">Operator</option>
+                            <option value="manager">Manager</option>
+                            <option value="technical-lead">Technical Lead</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
 
-      <div style="margin-bottom: 32px;">
-        <label style="display: block; margin-bottom: 8px; color: #f0f0f5; font-weight: 500;">
-          Describe your current system or workflow *
-        </label>
-        <textarea 
-          name="current-system" 
-          required 
-          rows="4"
-          style="width: 100%; padding: 12px 16px; background: #111118; border: 1px solid #2a2a35; border-radius: 4px; color: #f0f0f5; font-size: 1rem; box-sizing: border-box; resize: vertical;"
-          placeholder="Briefly describe what you're using now—spreadsheets, existing tools, manual processes..."
-        ></textarea>
-      </div>
+                    <div class="form-group">
+                        <label for="current-system">
+                            Describe your current system or workflow *
+                        </label>
+                        <textarea 
+                            id="current-system" 
+                            name="current-system" 
+                            required 
+                            placeholder="Briefly describe what you're using now—spreadsheets, existing tools, manual processes..."
+                        ></textarea>
+                    </div>
 
-      <div style="margin-bottom: 32px;">
-        <label style="display: block; margin-bottom: 8px; color: #f0f0f5; font-weight: 500;">
-          What's breaking or slowing you down right now? *
-        </label>
-        <textarea 
-          name="pain-points" 
-          required 
-          rows="4"
-          style="width: 100%; padding: 12px 16px; background: #111118; border: 1px solid #2a2a35; border-radius: 4px; color: #f0f0f5; font-size: 1rem; box-sizing: border-box; resize: vertical;"
-          placeholder="What specific pain points are you experiencing? What's the biggest friction?"
-        ></textarea>
-      </div>
+                    <div class="form-group">
+                        <label for="pain-points">
+                            What's breaking or slowing you down right now? *
+                        </label>
+                        <textarea 
+                            id="pain-points" 
+                            name="pain-points" 
+                            required 
+                            placeholder="What specific pain points are you experiencing? What's the biggest friction?"
+                        ></textarea>
+                    </div>
 
-      <div style="margin-bottom: 48px;">
-        <label style="display: block; margin-bottom: 8px; color: #f0f0f5; font-weight: 500;">Timeline *</label>
-        <select 
-          name="timeline" 
-          required 
-          style="width: 100%; padding: 12px 16px; background: #111118; border: 1px solid #2a2a35; border-radius: 4px; color: #f0f0f5; font-size: 1rem; box-sizing: border-box;"
-        >
-          <option value="" disabled selected>Select timeline</option>
-          <option value="immediate">Immediate (within 2 weeks)</option>
-          <option value="1-3-months">1-3 months</option>
-          <option value="exploring">Exploring options</option>
-          <option value="not-sure">Not sure yet</option>
-        </select>
-      </div>
+                    <div class="form-group">
+                        <label for="timeline">Timeline *</label>
+                        <select id="timeline" name="timeline" required>
+                            <option value="" disabled selected>Select timeline</option>
+                            <option value="immediate">Immediate (within 2 weeks)</option>
+                            <option value="1-3-months">1-3 months</option>
+                            <option value="exploring">Exploring options</option>
+                            <option value="not-sure">Not sure yet</option>
+                        </select>
+                    </div>
 
-      <button 
-        type="submit" 
-        style="background: #3a8bba; color: white; padding: 16px 32px; border-radius: 4px; border: none; font-weight: 600; font-size: 1.1rem; cursor: pointer; width: 100%;"
-      >
-        Start the Conversation
-      </button>
-    </form>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        Start the Conversation
+                    </button>
+                </form>
+            </div>
 
-    <div style="text-align: center; margin-top: 48px; color: #808090; font-size: 0.9rem;">
-      <p>Prefer to schedule a call first?</p>
-      <a href="#schedule-call" style="color: #3a8bba; text-decoration: none; font-weight: 500;">Schedule a 20-minute System Clarity Call →</a>
-    </div>
-  </section>
+            <div class="text-center mt-48" style="color: var(--text-tertiary); font-size: 0.9rem;">
+                <p>Prefer to schedule a call first?</p>
+                <a href="#schedule-call" style="color: var(--accent); font-weight: 500;">
+                    Schedule a 20-minute System Clarity Call →
+                </a>
+            </div>
+        </div>
+    </section>
 </Layout>
