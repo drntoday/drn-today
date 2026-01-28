@@ -1,381 +1,266 @@
 ---
+// Layout.astro
+const { title } = Astro.props;
 const siteTitle = "DRN.today";
-const pageTitle = Astro.props.title ? `${Astro.props.title} · ${siteTitle}` : siteTitle;
-const description = Astro.props.description || "Founder-built web systems that replace spreadsheets, reduce operational friction, and bring clarity";
+const pageTitle = title ? `${title} · ${siteTitle}` : siteTitle;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Founder-built web systems that replace spreadsheets, reduce operational friction, and bring clarity — designed and executed by a single accountable founder." />
+    
     <title>{pageTitle}</title>
-    <meta name="description" content={description} />
     
     <!-- Open Graph -->
     <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content="Founder-built web systems for operational clarity" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site).href} />
+    <meta property="og:url" content={Astro.url} />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:description" content="Founder-built web systems for operational clarity" />
     
+    <!-- Canonical -->
+    <link rel="canonical" href={Astro.url} />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Styles -->
     <style>
-        :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #111118;
-            --bg-surface: #1a1a23;
-            --text-primary: #f0f0f5;
-            --text-secondary: #b0b0c0;
-            --text-tertiary: #808090;
-            --accent: #3a8bba;
-            --accent-hover: #4a9bca;
-            --border: #2a2a35;
-            --border-light: #333340;
-        }
+      :root {
+        /* Color Palette */
+        --color-bg-primary: #0a0a0f;
+        --color-bg-secondary: #111118;
+        --color-bg-surface: #1a1a23;
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        --color-text-primary: #f0f0f5;
+        --color-text-secondary: #b0b0c0;
+        --color-text-tertiary: #808090;
         
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-        }
+        --color-accent: #3a8bba;
+        --color-accent-hover: #4a9bca;
+        --color-accent-active: #2a7baa;
         
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-        
-        /* Navigation */
-        .nav {
-            background: rgba(10, 10, 15, 0.95);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-            height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .nav-logo {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--text-primary);
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 24px;
-        }
-        
-        .nav-link {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        
-        .nav-link:hover {
-            color: var(--text-primary);
-        }
-        
-        .nav-cta {
-            background: var(--accent);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: background 0.2s;
-        }
-        
-        .nav-cta:hover {
-            background: var(--accent-hover);
-        }
-        
-        /* Main Content */
-        main {
-            min-height: calc(100vh - 200px);
-        }
-        
-        /* Footer */
-        .footer {
-            background: var(--bg-primary);
-            border-top: 1px solid var(--border);
-            padding: 48px 24px;
-            margin-top: 80px;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .footer-text {
-            color: var(--text-tertiary);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-        
-        .footer-links {
-            margin-top: 24px;
-        }
-        
-        .footer-link {
-            color: var(--text-secondary);
-            margin-right: 16px;
-        }
-        
-        .footer-link:hover {
-            color: var(--text-primary);
-        }
-        
-        /* Sections */
-        .section {
-            padding: 80px 24px;
-        }
-        
-        .section-narrow {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .section-wide {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        --color-border: #2a2a35;
+        --color-divider: #333340;
         
         /* Typography */
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 24px;
+        --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        --font-mono: 'SF Mono', Monaco, Consolas, monospace;
+        
+        /* Spacing */
+        --spacing-unit: 8px;
+        --container-width: 1200px;
+      }
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: var(--font-sans);
+        background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+        color: var(--color-text-primary);
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+      
+      a {
+        color: var(--color-accent);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      
+      a:hover {
+        color: var(--color-accent-hover);
+      }
+      
+      .container {
+        max-width: var(--container-width);
+        margin: 0 auto;
+        padding: 0 calc(var(--spacing-unit) * 3);
+      }
+      
+      /* Button Styles */
+      .btn {
+        display: inline-block;
+        padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 3);
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border: none;
+        font-family: inherit;
+      }
+      
+      .btn-primary {
+        background: var(--color-accent);
+        color: white;
+      }
+      
+      .btn-primary:hover {
+        background: var(--color-accent-hover);
+        color: white;
+      }
+      
+      .btn-secondary {
+        background: transparent;
+        color: var(--color-accent);
+        border: 1px solid var(--color-accent);
+      }
+      
+      .btn-secondary:hover {
+        background: rgba(58, 139, 186, 0.1);
+      }
+      
+      /* Navigation */
+      .nav {
+        background: rgba(10, 10, 15, 0.95);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 calc(var(--spacing-unit) * 3);
+        z-index: 1000;
+        border-bottom: 1px solid var(--color-border);
+      }
+      
+      .nav-logo {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--color-text-primary);
+      }
+      
+      .nav-links {
+        display: flex;
+        gap: calc(var(--spacing-unit) * 2);
+        align-items: center;
+      }
+      
+      .nav-link {
+        color: var(--color-text-secondary);
+        font-size: 0.95rem;
+        font-weight: 500;
+        padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 2);
+      }
+      
+      .nav-link:hover {
+        color: var(--color-text-primary);
+      }
+      
+      /* Main Content */
+      main {
+        padding-top: 64px;
+        min-height: calc(100vh - 200px);
+      }
+      
+      /* Footer */
+      .footer {
+        background: var(--color-bg-primary);
+        border-top: 1px solid var(--color-border);
+        padding: calc(var(--spacing-unit) * 6) 0;
+        color: var(--color-text-tertiary);
+        font-size: 0.9rem;
+      }
+      
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .footer-links {
+        display: flex;
+        gap: calc(var(--spacing-unit) * 3);
+      }
+      
+      .footer-link {
+        color: var(--color-text-secondary);
+      }
+      
+      .footer-link:hover {
+        color: var(--color-text-primary);
+      }
+      
+      /* Utility Classes */
+      .text-center { text-align: center; }
+      .mt-1 { margin-top: var(--spacing-unit); }
+      .mt-2 { margin-top: calc(var(--spacing-unit) * 2); }
+      .mt-3 { margin-top: calc(var(--spacing-unit) * 3); }
+      .mt-4 { margin-top: calc(var(--spacing-unit) * 4); }
+      .mt-6 { margin-top: calc(var(--spacing-unit) * 6); }
+      .mt-8 { margin-top: calc(var(--spacing-unit) * 8); }
+      
+      .mb-1 { margin-bottom: var(--spacing-unit); }
+      .mb-2 { margin-bottom: calc(var(--spacing-unit) * 2); }
+      .mb-3 { margin-bottom: calc(var(--spacing-unit) * 3); }
+      .mb-4 { margin-bottom: calc(var(--spacing-unit) * 4); }
+      .mb-6 { margin-bottom: calc(var(--spacing-unit) * 6); }
+      .mb-8 { margin-bottom: calc(var(--spacing-unit) * 8); }
+      
+      .py-6 { padding-top: calc(var(--spacing-unit) * 6); padding-bottom: calc(var(--spacing-unit) * 6); }
+      .py-8 { padding-top: calc(var(--spacing-unit) * 8); padding-bottom: calc(var(--spacing-unit) * 8); }
+      .py-12 { padding-top: calc(var(--spacing-unit) * 12); padding-bottom: calc(var(--spacing-unit) * 12); }
+      
+      /* Responsive */
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 calc(var(--spacing-unit) * 2);
         }
         
-        h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 32px;
+        .nav {
+          padding: 0 calc(var(--spacing-unit) * 2);
         }
         
-        h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 16px;
+        .footer-content {
+          flex-direction: column;
+          gap: calc(var(--spacing-unit) * 3);
+          text-align: center;
         }
-        
-        .text-large {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 16px 32px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.2s;
-            cursor: pointer;
-            border: none;
-            text-align: center;
-        }
-        
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: var(--accent-hover);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--accent);
-            border: 1px solid var(--accent);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(58, 139, 186, 0.1);
-        }
-        
-        /* Cards */
-        .card {
-            background: var(--bg-surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 32px;
-        }
-        
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-        }
-        
-        /* Utility */
-        .mb-24 { margin-bottom: 24px; }
-        .mb-32 { margin-bottom: 32px; }
-        .mb-48 { margin-bottom: 48px; }
-        .mb-64 { margin-bottom: 64px; }
-        
-        .mt-24 { margin-top: 24px; }
-        .mt-32 { margin-top: 32px; }
-        .mt-48 { margin-top: 48px; }
-        .mt-64 { margin-top: 64px; }
-        
-        .flex-center {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .flex-wrap {
-            flex-wrap: wrap;
-        }
-        
-        .gap-16 { gap: 16px; }
-        .gap-24 { gap: 24px; }
-        .gap-32 { gap: 32px; }
-        
-        .mono {
-            font-family: 'IBM Plex Mono', 'SF Mono', Monaco, Consolas, monospace;
-        }
-        
-        .tag {
-            display: inline-block;
-            background: rgba(58, 139, 186, 0.1);
-            color: var(--accent);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-right: 8px;
-            margin-bottom: 8px;
-        }
-        
-        /* Hero Gradient */
-        .hero-gradient {
-            background: linear-gradient(90deg, #f0f0f5 0%, #b0b0c0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        /* Forms */
-        .form-group {
-            margin-bottom: 32px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-            font-weight: 500;
-        }
-        
-        input, select, textarea {
-            width: 100%;
-            padding: 12px 16px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            color: var(--text-primary);
-            font-size: 1rem;
-            font-family: inherit;
-        }
-        
-        textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-container {
-                padding: 0 16px;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            h2 {
-                font-size: 1.75rem;
-            }
-            
-            .section {
-                padding: 48px 16px;
-            }
-            
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+      }
     </style>
-</head>
-<body>
-    <!-- Navigation -->
+  </head>
+  <body>
     <nav class="nav">
-        <div class="nav-container">
-            <div class="flex-center gap-32">
-                <a href="/" class="nav-logo">DRN.today</a>
-                <div class="nav-links">
-                    <a href="/work" class="nav-link">Work</a>
-                    <a href="/principles" class="nav-link">Principles</a>
-                    <a href="/about" class="nav-link">About</a>
-                </div>
-            </div>
-            <a href="/contact" class="nav-cta">Describe Your Challenge</a>
-        </div>
+      <a href="/" class="nav-logo">DRN.today</a>
+      <div class="nav-links">
+        <a href="/work" class="nav-link">Work</a>
+        <a href="/principles" class="nav-link">Principles</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/contact" class="btn btn-primary">Describe Your Challenge</a>
+      </div>
     </nav>
-
-    <!-- Main Content -->
+    
     <main>
-        <slot />
+      <slot />
     </main>
-
-    <!-- Footer -->
+    
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-text">
-                <p>© 2024 DRN.today</p>
-                <p>Founder-built systems · Direct execution · No hand-offs</p>
-                <div class="footer-links">
-                    <a href="/work" class="footer-link">Work</a>
-                    <a href="/principles" class="footer-link">Principles</a>
-                    <a href="/about" class="footer-link">About</a>
-                    <a href="/contact" class="footer-link">Contact</a>
-                </div>
-            </div>
+      <div class="container footer-content">
+        <div>
+          © 2024 DRN.today · Founder-built systems
         </div>
+        <div class="footer-links">
+          <a href="/work" class="footer-link">Work</a>
+          <a href="/principles" class="footer-link">Principles</a>
+          <a href="/about" class="footer-link">About</a>
+          <a href="/contact" class="footer-link">Contact</a>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
