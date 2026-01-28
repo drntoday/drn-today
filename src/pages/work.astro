@@ -1,80 +1,100 @@
 ---
+// Work/System Stories Page
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout 
-    title="System Stories · Real Problems, Systematic Solutions"
-    description="Case studies of founder-built internal systems: dashboards, backend platforms, and operational tools that solve real business problems."
->
-    <section class="section">
-        <div class="section-wide">
-            <h1 class="text-center mb-24">System Stories</h1>
-            <p class="text-large text-center mb-64" style="max-width: 600px; margin: 0 auto;">
-                Real problems, systematic solutions, documented outcomes.
+<Layout title="System Stories · Real Problems, Systematic Solutions">
+  <section class="py-12">
+    <div class="container">
+      <div style="max-width: 1000px; margin: 0 auto;">
+        <h1 style="font-size: 2.441rem; font-weight: 700; margin-bottom: 1rem;">
+          System Stories
+        </h1>
+        <p style="font-size: 1.25rem; color: var(--color-text-secondary); margin-bottom: 3rem;">
+          Real problems, systematic solutions, documented outcomes.
+        </p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+          <!-- System Story Card 1 -->
+          <div style="padding: 2rem; background: var(--color-bg-surface); border: 1px solid var(--color-border); border-radius: 6px;">
+            <h3 style="font-size: 1.563rem; font-weight: 600; margin-bottom: 1rem;">
+              Replacing Manual Reporting with Internal Dashboard
+            </h3>
+            <div style="margin-bottom: 1.5rem;">
+              <span style="display: inline-block; padding: 0.25rem 0.75rem; background: rgba(58, 139, 186, 0.1); color: var(--color-accent); border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem; margin-bottom: 0.5rem;">
+                Dashboard
+              </span>
+              <span style="display: inline-block; padding: 0.25rem 0.75rem; background: rgba(58, 139, 186, 0.1); color: var(--color-accent); border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem; margin-bottom: 0.5rem;">
+                Automation
+              </span>
+            </div>
+            <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+              A founder was manually reconciling data from 5 spreadsheets every morning to prepare daily reports for the team. The process took 4 hours daily and was error-prone.
             </p>
-
-            <div class="card-grid">
-                <!-- Story 1 -->
-                <div class="card">
-                    <div class="mono" style="color: var(--accent); margin-bottom: 16px;">Dashboard System</div>
-                    <h3>Replacing Manual Reporting</h3>
-                    <p class="mb-24">
-                        A SaaS founder was spending 4 hours daily merging data from 5 different spreadsheets to understand business performance.
-                    </p>
-                    <div class="mb-24">
-                        <span class="tag">Dashboard</span>
-                        <span class="tag">Automation</span>
-                        <span class="tag">Reporting</span>
-                    </div>
-                    <div style="border-top: 1px solid var(--border); padding-top: 24px;">
-                        <div style="color: var(--text-tertiary); font-size: 0.9rem; margin-bottom: 8px;">Outcome</div>
-                        <div style="color: var(--text-primary); font-weight: 500;">Daily reporting time reduced from 4 hours to 10 minutes</div>
-                    </div>
-                </div>
-
-                <!-- Story 2 -->
-                <div class="card">
-                    <div class="mono" style="color: var(--accent); margin-bottom: 16px;">Backend Platform</div>
-                    <h3>Operations Automation System</h3>
-                    <p class="mb-24">
-                        An e-commerce operator was manually processing orders across 3 platforms, leading to errors and customer service issues.
-                    </p>
-                    <div class="mb-24">
-                        <span class="tag">API Integration</span>
-                        <span class="tag">Workflow Automation</span>
-                        <span class="tag">Error Handling</span>
-                    </div>
-                    <div style="border-top: 1px solid var(--border); padding-top: 24px;">
-                        <div style="color: var(--text-tertiary); font-size: 0.9rem; margin-bottom: 8px;">Outcome</div>
-                        <div style="color: var(--text-primary); font-weight: 500;">Order processing automated, errors reduced by 92%</div>
-                    </div>
-                </div>
-
-                <!-- Story 3 -->
-                <div class="card">
-                    <div class="mono" style="color: var(--accent); margin-bottom: 16px;">Internal Tool</div>
-                    <h3>Client Onboarding Portal</h3>
-                    <p class="mb-24">
-                        A service business was using 8 different tools for client onboarding, causing confusion and delays.
-                    </p>
-                    <div class="mb-24">
-                        <span class="tag">Portal</span>
-                        <span class="tag">Document Management</span>
-                        <span class="tag">Notifications</span>
-                    </div>
-                    <div style="border-top: 1px solid var(--border); padding-top: 24px;">
-                        <div style="color: var(--text-tertiary); font-size: 0.9rem; margin-bottom: 8px;">Outcome</div>
-                        <div style="color: var(--text-primary); font-weight: 500;">Onboarding time reduced from 2 weeks to 3 days</div>
-                    </div>
-                </div>
+            <div style="padding: 1rem; background: rgba(10, 10, 15, 0.5); border-radius: 4px; margin-bottom: 1.5rem;">
+              <div style="font-size: 0.9rem; color: var(--color-text-tertiary); margin-bottom: 0.25rem;">Outcome</div>
+              <div style="font-weight: 600;">Daily reporting time reduced from 4 hours to 10 minutes</div>
             </div>
-
-            <div class="text-center mt-64">
-                <p class="mb-24" style="color: var(--text-tertiary);">
-                    These are anonymized examples. Real stories include more detail about challenges and solutions.
-                </p>
-                <a href="/contact" class="btn btn-primary">Describe Your Challenge</a>
+            <a href="/work/replacing-manual-reporting" style="color: var(--color-accent); font-weight: 500;">Read Full Story →</a>
+          </div>
+          
+          <!-- System Story Card 2 -->
+          <div style="padding: 2rem; background: var(--color-bg-surface); border: 1px solid var(--color-border); border-radius: 6px;">
+            <h3 style="font-size: 1.563rem; font-weight: 600; margin-bottom: 1rem;">
+              Automating Client Onboarding Workflows
+            </h3>
+            <div style="margin-bottom: 1.5rem;">
+              <span style="display: inline-block; padding: 0.25rem 0.75rem; background: rgba(58, 139, 186, 0.1); color: var(--color-accent); border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem; margin-bottom: 0.5rem;">
+                Workflow Automation
+              </span>
+              <span style="display: inline-block; padding: 0.25rem 0.75rem; background: rgba(58, 139, 186, 0.1); color: var(--color-accent); border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem; margin-bottom: 0.5rem;">
+                Backend System
+              </span>
             </div>
+            <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+              A service business was using 4 different tools for client onboarding, causing missed steps and inconsistent client experiences.
+            </p>
+            <div style="padding: 1rem; background: rgba(10, 10, 15, 0.5); border-radius: 4px; margin-bottom: 1.5rem;">
+              <div style="font-size: 0.9rem; color: var(--color-text-tertiary); margin-bottom: 0.25rem;">Outcome</div>
+              <div style="font-weight: 600;">Onboarding time reduced by 70%, error rate to 0%</div>
+            </div>
+            <a href="/work/automating-onboarding" style="color: var(--color-accent); font-weight: 500;">Read Full Story →</a>
+          </div>
+          
+          <!-- System Story Card 3 -->
+          <div style="padding: 2rem; background: var(--color-bg-surface); border: 1px solid var(--color-border); border-radius: 6px;">
+            <h3 style="font-size: 1.563rem; font-weight: 600; margin-bottom: 1rem;">
+              Centralizing Operations Data for Decision Making
+            </h3>
+            <div style="margin-bottom: 1.5rem;">
+              <span style="display: inline-block; padding: 0.25rem 0.75rem; background: rgba(58, 139, 186, 0.1); color: var(--color-accent); border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem; margin-bottom: 0.5rem;">
+                Data Integration
+              </span>
+              <span style="display: inline-block; padding: 0.25rem 0.75rem; background: rgba(58, 139, 186, 0.1); color: var(--color-accent); border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem; margin-bottom: 0.5rem;">
+                Internal Tools
+              </span>
+            </div>
+            <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+              A growing company had operational data spread across 8 different tools, making it impossible to get a complete picture of business health.
+            </p>
+            <div style="padding: 1rem; background: rgba(10, 10, 15, 0.5); border-radius: 4px; margin-bottom: 1.5rem;">
+              <div style="font-size: 0.9rem; color: var(--color-text-tertiary); margin-bottom: 0.25rem;">Outcome</div>
+              <div style="font-weight: 600;">Unified view of operations, decision time reduced by 80%</div>
+            </div>
+            <a href="/work/centralizing-operations-data" style="color: var(--color-accent); font-weight: 500;">Read Full Story →</a>
+          </div>
         </div>
-    </section>
+        
+        <div style="padding: 3rem; background: var(--color-bg-surface); border: 1px solid var(--color-border); border-radius: 6px; text-align: center;">
+          <h3 style="font-size: 1.563rem; font-weight: 600; margin-bottom: 1rem;">
+            Have a similar challenge?
+          </h3>
+          <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+            These systems started with a conversation about a specific operational problem.
+          </p>
+          <a href="/contact" class="btn btn-primary">Describe Your System Challenge</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
