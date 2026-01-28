@@ -1,0 +1,70 @@
+---
+// Frontmatter: JavaScript/TypeScript goes here
+const siteTitle = "DRN.today";
+const pageTitle = Astro.props.title ? `${Astro.props.title} · ${siteTitle}` : siteTitle;
+const description = Astro.props.description || "Founder-built web systems that replace spreadsheets, reduce operational friction, and bring clarity";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site).href} />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    
+    <!-- Canonical -->
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
+    
+    <!-- Styles will be injected here -->
+  </head>
+  <body style="margin: 0; padding: 0; background: #0a0a0f; color: #f0f0f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;">
+    <!-- Navigation -->
+    <header style="background: rgba(10, 10, 15, 0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #2a2a35;">
+      <nav style="max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: center; gap: 32px;">
+          <a href="/" style="font-weight: 700; font-size: 1.2rem; color: #f0f0f5; text-decoration: none;">DRN.today</a>
+          <div style="display: flex; gap: 24px;">
+            <a href="/work" style="color: #b0b0c0; text-decoration: none; font-size: 0.95rem; font-weight: 500;">Work</a>
+            <a href="/principles" style="color: #b0b0c0; text-decoration: none; font-size: 0.95rem; font-weight: 500;">Principles</a>
+            <a href="/about" style="color: #b0b0c0; text-decoration: none; font-size: 0.95rem; font-weight: 500;">About</a>
+          </div>
+        </div>
+        <a href="/contact" style="background: #3a8bba; color: white; padding: 12px 24px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.95rem;">Describe Your Challenge</a>
+      </nav>
+    </header>
+
+    <main>
+      <slot /> <!-- Page content injected here -->
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: #0a0a0f; border-top: 1px solid #2a2a35; padding: 48px 24px; margin-top: 80px;">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="color: #808090; font-size: 0.9rem; line-height: 1.6;">
+          <p>© 2024 DRN.today</p>
+          <p>Founder-built systems · Direct execution · No hand-offs</p>
+          <p style="margin-top: 24px;">
+            <a href="/work" style="color: #b0b0c0; text-decoration: none; margin-right: 16px;">Work</a>
+            <a href="/principles" style="color: #b0b0c0; text-decoration: none; margin-right: 16px;">Principles</a>
+            <a href="/about" style="color: #b0b0c0; text-decoration: none; margin-right: 16px;">About</a>
+            <a href="/contact" style="color: #b0b0c0; text-decoration: none;">Contact</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts will be injected here -->
+  </body>
+</html>
