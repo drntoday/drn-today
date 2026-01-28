@@ -1,84 +1,121 @@
 ---
+// Principles Page
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout 
-    title="Systems Thinking Principles · Founder-Built Execution"
-    description="The principles behind building reliable, maintainable internal systems: ownership, stability, documentation, and responsible evolution."
->
-    <section class="section">
-        <div class="section-narrow">
-            <h1 class="mb-24">Principles</h1>
-            <p class="text-large mb-64">
-                The thinking behind the systems.
-            </p>
-
-            <div class="mb-64">
-                <h2 class="mb-24" style="border-bottom: 1px solid var(--border); padding-bottom: 16px;">
-                    1. Ownership vs. Delegation in Systems
-                </h2>
-                <p class="mb-16">
-                    Delegation works for tasks with clear boundaries. Systems—especially internal ones—have fluid boundaries. What starts as a reporting tool becomes a decision engine, then integrates with operations, then needs real-time updates.
-                </p>
-                <p>
-                    Ownership means one person understands the whole, sees connections before they become problems, and evolves the system intentionally rather than reactively.
-                </p>
+<Layout title="Systems Thinking Principles · Founder-Built Execution">
+  <section class="py-12">
+    <div class="container">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <h1 style="font-size: 2.441rem; font-weight: 700; margin-bottom: 1rem;">
+          Principles
+        </h1>
+        <p style="font-size: 1.25rem; color: var(--color-text-secondary); margin-bottom: 3rem;">
+          The thinking behind the systems.
+        </p>
+        
+        <div style="display: flex; flex-direction: column; gap: 4rem;">
+          <!-- Principle 1 -->
+          <div>
+            <h2 style="font-size: 1.953rem; font-weight: 600; margin-bottom: 1.5rem;">
+              1. Ownership vs. Delegation in Systems
+            </h2>
+            <div style="color: var(--color-text-secondary); line-height: 1.7;">
+              <p style="margin-bottom: 1rem;">
+                Delegation works for tasks. Ownership is required for systems.
+              </p>
+              <p style="margin-bottom: 1rem;">
+                When you delegate system building, you get features delivered to specification. When you assign ownership, you get systems that solve problems.
+              </p>
+              <p>
+                The difference is in the thinking: delegated work follows instructions; owned work questions assumptions, anticipates edge cases, and considers long-term implications. A system owner doesn't just build what was asked—they build what's needed, even if it differs from the initial request.
+              </p>
             </div>
-
-            <div class="mb-64">
-                <h2 class="mb-24" style="border-bottom: 1px solid var(--border); padding-bottom: 16px;">
-                    2. Why Stability Precedes Scale
-                </h2>
-                <p class="mb-16">
-                    A system that works reliably for 10 users but fails unpredictably for 100 is worse than one that works for 5 users consistently. Scale reveals architectural flaws, but instability destroys trust.
-                </p>
-                <p>
-                    We build for the current reality plus one order of magnitude. When that's stable, we scale again. Not before.
-                </p>
+          </div>
+          
+          <!-- Principle 2 -->
+          <div>
+            <h2 style="font-size: 1.953rem; font-weight: 600; margin-bottom: 1.5rem;">
+              2. Why Stability Precedes Scale
+            </h2>
+            <div style="color: var(--color-text-secondary); line-height: 1.7;">
+              <p style="margin-bottom: 1rem;">
+                Scaling a broken system just gives you more broken things faster.
+              </p>
+              <p style="margin-bottom: 1rem;">
+                Before thinking about handling 10x the load or 10x the users, a system must work reliably at 1x. This seems obvious, but it's often overlooked in the rush to add features or accommodate growth.
+              </p>
+              <p>
+                Stability means: the system works consistently under normal conditions, errors are handled gracefully, data is never lost, and performance is predictable. Once stability is proven, then and only then should scaling be considered.
+              </p>
             </div>
-
-            <div class="mb-64">
-                <h2 class="mb-24" style="border-bottom: 1px solid var(--border); padding-bottom: 16px;">
-                    3. When Spreadsheets Fail (and What Comes Next)
-                </h2>
-                <p class="mb-16">
-                    Spreadsheets are perfect until they're not. The failure signals: multiple people editing, version confusion, manual data entry errors, formulas breaking silently, decision delays waiting for "the spreadsheet person."
-                </p>
-                <p>
-                    The next step isn't a bigger spreadsheet. It's a system with: single source of truth, controlled access, automated data flows, validation, and audit trails.
-                </p>
+          </div>
+          
+          <!-- Principle 3 -->
+          <div>
+            <h2 style="font-size: 1.953rem; font-weight: 600; margin-bottom: 1.5rem;">
+              3. When Spreadsheets Fail (and What Comes Next)
+            </h2>
+            <div style="color: var(--color-text-secondary); line-height: 1.7;">
+              <p style="margin-bottom: 1rem;">
+                Spreadsheets are incredible tools—until they're not. The failure points are predictable:
+              </p>
+              <ul style="padding-left: 1.5rem; margin-bottom: 1rem;">
+                <li style="margin-bottom: 0.5rem;">When multiple people need to edit simultaneously</li>
+                <li style="margin-bottom: 0.5rem;">When data comes from multiple sources</li>
+                <li style="margin-bottom: 0.5rem;">When processes become complex with many steps</li>
+                <li style="margin-bottom: 0.5rem;">When real-time data is needed</li>
+                <li>When errors have significant consequences</li>
+              </ul>
+              <p>
+                The next step isn't necessarily a complex enterprise system. Often, it's a simple, focused internal tool that solves the specific failure point while keeping everything else the same.
+              </p>
             </div>
-
-            <div class="mb-64">
-                <h2 class="mb-24" style="border-bottom: 1px solid var(--border); padding-bottom: 16px;">
-                    4. Building for Daily Use, Not Demos
-                </h2>
-                <p>
-                    Demo-ware is optimized for first impressions. Production systems are optimized for the 1000th use. This means: loading states, error recovery, data validation, performance under real data volumes, clear error messages, and intuitive workflows for tired users at 4 PM.
-                </p>
+          </div>
+          
+          <!-- Principle 4 -->
+          <div>
+            <h2 style="font-size: 1.953rem; font-weight: 600; margin-bottom: 1.5rem;">
+              4. Building for Daily Use, Not Demos
+            </h2>
+            <div style="color: var(--color-text-secondary); line-height: 1.7;">
+              <p style="margin-bottom: 1rem;">
+                Demo-quality systems are optimized for first impressions. Production systems are optimized for the hundredth use.
+              </p>
+              <p>
+                The difference shows up in error handling, loading states, data validation, edge cases, and performance under real-world conditions. A system built for daily use assumes things will go wrong and handles them gracefully. It prioritizes reliability over flashiness, and utility over novelty.
+              </p>
             </div>
-
-            <div class="mb-64">
-                <h2 class="mb-24" style="border-bottom: 1px solid var(--border); padding-bottom: 16px;">
-                    5. Responsible Evolution (Not Scope Creep)
-                </h2>
-                <p class="mb-16">
-                    Systems evolve or die. But evolution without architecture is cancer—features added wherever they fit, complexity growing exponentially.
-                </p>
-                <p>
-                    Responsible evolution means: understanding the cost of each feature, preserving conceptual integrity, and saying "not now" more often than "yes."
-                </p>
+          </div>
+          
+          <!-- Principle 5 -->
+          <div>
+            <h2 style="font-size: 1.953rem; font-weight: 600; margin-bottom: 1.5rem;">
+              5. Responsible Evolution (Not Scope Creep)
+            </h2>
+            <div style="color: var(--color-text-secondary); line-height: 1.7;">
+              <p style="margin-bottom: 1rem;">
+                All systems evolve. The question is whether evolution is controlled or chaotic.
+              </p>
+              <p style="margin-bottom: 1rem;">
+                Scope creep happens when new features are added without considering their impact on the overall system architecture, maintainability, or performance. Responsible evolution means each change is evaluated against the system's goals and architecture, and implemented in a way that maintains or improves system integrity.
+              </p>
+              <p>
+                This doesn't mean systems never change. It means change is intentional, documented, and preserves what works while carefully adding what's needed.
+              </p>
             </div>
-
-            <div class="card mt-64">
-                <h2 class="mb-16">These principles guide every system we build.</h2>
-                <p class="mb-32">
-                    They're not abstract philosophy—they're practical constraints that produce better outcomes. If your challenge aligns with this thinking, we should talk.
-                </p>
-                <div class="text-center">
-                    <a href="/contact" class="btn btn-primary">Start the Conversation</a>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
+        
+        <div style="margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--color-border);">
+          <h3 style="font-size: 1.563rem; font-weight: 600; margin-bottom: 1.5rem; text-align: center;">
+            Systems built on principles last longer
+          </h3>
+          <div style="text-align: center;">
+            <a href="/contact" class="btn btn-primary">Start with Your Challenge</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
