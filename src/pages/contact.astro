@@ -1,95 +1,142 @@
 ---
+// Contact Page
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout 
-    title="Start the Conversation · Describe Your System Challenge"
-    description="Ready to systematize your operations? Describe your challenge for a focused discussion about founder-built internal systems."
->
-    <section class="section">
-        <div class="section-narrow">
-            <h1 class="text-center mb-24">Start the Conversation</h1>
-            <p class="text-large text-center mb-48">
-                Describe your system challenge below. The more specific you are, the better I can understand if and how I can help.
-            </p>
-
-            <!-- Contact Form -->
-            <div class="card">
-                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                    <input type="hidden" name="form-name" value="contact" />
-                    <p style="display: none;">
-                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                    </p>
-
-                    <div class="form-group">
-                        <label for="name">Name *</label>
-                        <input type="text" id="name" name="name" required placeholder="Your name" />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required placeholder="you@example.com" />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="role">Role *</label>
-                        <select id="role" name="role" required>
-                            <option value="" disabled selected>Select your role</option>
-                            <option value="founder">Founder</option>
-                            <option value="operator">Operator</option>
-                            <option value="manager">Manager</option>
-                            <option value="technical-lead">Technical Lead</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="current-system">
-                            Describe your current system or workflow *
-                        </label>
-                        <textarea 
-                            id="current-system" 
-                            name="current-system" 
-                            required 
-                            placeholder="Briefly describe what you're using now—spreadsheets, existing tools, manual processes..."
-                        ></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="pain-points">
-                            What's breaking or slowing you down right now? *
-                        </label>
-                        <textarea 
-                            id="pain-points" 
-                            name="pain-points" 
-                            required 
-                            placeholder="What specific pain points are you experiencing? What's the biggest friction?"
-                        ></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="timeline">Timeline *</label>
-                        <select id="timeline" name="timeline" required>
-                            <option value="" disabled selected>Select timeline</option>
-                            <option value="immediate">Immediate (within 2 weeks)</option>
-                            <option value="1-3-months">1-3 months</option>
-                            <option value="exploring">Exploring options</option>
-                            <option value="not-sure">Not sure yet</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">
-                        Start the Conversation
-                    </button>
-                </form>
-            </div>
-
-            <div class="text-center mt-48" style="color: var(--text-tertiary); font-size: 0.9rem;">
-                <p>Prefer to schedule a call first?</p>
-                <a href="#schedule-call" style="color: var(--accent); font-weight: 500;">
-                    Schedule a 20-minute System Clarity Call →
-                </a>
-            </div>
+<Layout title="Start the Conversation · Describe Your System Challenge">
+  <section class="py-12">
+    <div class="container">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <h1 style="font-size: 2.441rem; font-weight: 700; margin-bottom: 1rem;">
+          Start the Conversation
+        </h1>
+        <p style="font-size: 1.25rem; color: var(--color-text-secondary); margin-bottom: 3rem;">
+          Describe your system challenge below. I'll review and respond within 24 hours.
+        </p>
+        
+        <form 
+          action="https://formspree.io/f/YOUR_FORMSPREE_ID" 
+          method="POST"
+          style="display: flex; flex-direction: column; gap: 1.5rem;"
+        >
+          <div>
+            <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Name *</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required 
+              style="width: 100%; padding: 1rem; background: var(--color-bg-surface); border: 1px solid var(--color-border); border-radius: 4px; color: var(--color-text-primary); font-family: inherit; font-size: 1rem;"
+              placeholder="Your name"
+            />
+          </div>
+          
+          <div>
+            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email *</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required 
+              style="width: 100%; padding: 1rem; background: var(--color-bg-surface); border: 1px solid var(--color-border); border-radius: 4px; color: var(--color-text-primary); font-family: inherit; font-size: 1rem;"
+              placeholder="you@company.com"
+            />
+          </div>
+          
+          <div>
+            <label for="role" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Role *</label>
+            <select 
+              id="role" 
+              name="role" 
+              required 
+              style="width: 100%; padding: 1rem; background: var(--color-bg-surface); border: 1px solid var(--color-border); border-radius: 4px; color: var(--color-text-primary); font-family: inherit; font-size: 1rem;"
+            >
+              <option value="">Select your role</option>
+              <option value="founder">Founder</option>
+              <option value="operator">Operator</option>
+              <option value="manager">Manager</option>
+              <option value="technical-lead">Technical Lead</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="current-system" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">
+              Current System/Workflow Description *
+            </label>
+            <textarea 
+              id="current-system" 
+              name="current-system" 
+              required 
+              rows="4"
+              style="width: 100%; padding: 1rem; background: var(--color-bg-surface); border: 1px solid var(--color-border); border-radius: 4px; color: var(--color-text-primary); font-family: inherit; font-size: 1rem; resize: vertical;"
+              placeholder="Briefly describe what you're using now—spreadsheets, existing tools, manual processes..."
+            ></textarea>
+          </div>
+          
+          <div>
+            <label for="pain-points" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">
+              What's Breaking or Slowing You Down? *
+            </label>
+            <textarea 
+              id="pain-points" 
+              name="pain-points" 
+              required 
+              rows="4"
+              style="width: 100%; padding: 1rem; background: var(--color-bg-surface); border: 1px solid var(--color-border); border-radius: 4px; color: var(--color-text-primary); font-family: inherit; font-size: 1rem; resize: vertical;"
+              placeholder="What specific pain points are you experiencing? What's the biggest friction?"
+            ></textarea>
+          </div>
+          
+          <div>
+            <label for="timeline" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Timeline *</label>
+            <select 
+              id="timeline" 
+              name="timeline" 
+              required 
+              style="width: 100%; padding: 1rem; background: var(--color-bg-surface); border: 1px solid var(--color-border); border-radius: 4px; color: var(--color-text-primary); font-family: inherit; font-size: 1rem;"
+            >
+              <option value="">Select timeline</option>
+              <option value="immediate">Immediate</option>
+              <option value="1-3-months">1-3 months</option>
+              <option value="exploring">Exploring</option>
+              <option value="not-sure">Not sure</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="additional-info" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">
+              Anything Else I Should Know?
+            </label>
+            <textarea 
+              id="additional-info" 
+              name="additional-info" 
+              rows="3"
+              style="width: 100%; padding: 1rem; background: var(--color-bg-surface); border: 1px solid var(--color-border); border-radius: 4px; color: var(--color-text-primary); font-family: inherit; font-size: 1rem; resize: vertical;"
+              placeholder="Links to existing products, specific constraints, previous attempts..."
+            ></textarea>
+          </div>
+          
+          <!-- Honeypot field for spam protection -->
+          <input type="text" name="_gotcha" style="display: none;" />
+          
+          <button 
+            type="submit" 
+            class="btn btn-primary"
+            style="align-self: flex-start;"
+          >
+            Start the Conversation
+          </button>
+        </form>
+        
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--color-border);">
+          <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Prefer a call?</h3>
+          <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+            Schedule a 20-minute System Clarity Call to discuss your challenge.
+          </p>
+          <a href="/contact?type=call" class="btn btn-secondary">Schedule a System Clarity Call</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 </Layout>
